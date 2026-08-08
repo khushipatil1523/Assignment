@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors");
+
 
 const app = express();
 const categoryRoutes = require("./src/routes/categoryroute");
@@ -8,13 +8,7 @@ const configurationRoutes = require("./src/routes/configurationroute");
 const pricingRoutes = require("./src/routes/pricingroute");
 const quotationRoutes = require("./src/routes/quotationroute");
 
-app.use(
-    cors({
-        origin: "https://assignment-frontend-ten-zeta.vercel.app",
-        methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        allowedHeaders: ["Content-Type", "Authorization"],
-    })
-);
+
 app.use(express.json());
 
 app.use("/api/auth", require("./src/routes/authroute"));
